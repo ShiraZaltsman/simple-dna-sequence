@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shira/Desktop/dna/DnaSequence.h
+iostream
+-
+Nucleotide.h
+/home/shira/Desktop/dna/Nucleotide.h
+mystring.h
+/home/shira/Desktop/dna/mystring.h
+
+/home/shira/Desktop/dna/Nucleotide.h
+
+/home/shira/Desktop/dna/main.cpp
+iostream
+-
+DnaSequence.h
+/home/shira/Desktop/dna/DnaSequence.h
+
+/home/shira/Desktop/dna/mystring.h
+
