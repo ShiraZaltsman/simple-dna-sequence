@@ -7,16 +7,15 @@
 
 #include <iostream>
 #include "Nucleotide.h"
-#include "mystring.h"
 
-size_t strlen(const char *str);
+
+
 
 class DnaSequence {
 public:
     DnaSequence(const char *seq);
-
-    //DnaSequence(const std::string seq);
-
+    DnaSequence();
+    ~DnaSequence();
     //cpy ctor
     DnaSequence(const DnaSequence &dnaSequence);
 
@@ -40,11 +39,18 @@ private:
     size_t m_len;
 };
 
+size_t mystrlen(const char *str);
+
 inline DnaSequence::DnaSequence(const char *seq) {
-    m_len = strlen(seq);
-    m_seq=new Nucleotide[m_len];
-    for (size_t i = 0; i <m_len ; ++i) {
-        m_seq[i].set_value(seq[i]);
+    try {
+        this->m_len = mystrlen(seq);
+        this->m_seq = new Nucleotide[this->m_len];
+        for (size_t i = 0; i < this->m_len; ++i) {
+            this->m_seq[i].set_value(seq[i]);
+        }
+    }catch (const char* e){
+        delete[] this->m_seq;
+        throw e;
     }
 }
 
@@ -52,7 +58,6 @@ inline std::ostream &operator<<(std::ostream &os, const DnaSequence &dnaSequence
     for (size_t i = 0; i < dnaSequence.get_seq_length() ; ++i) {
         os << dnaSequence.m_seq[i].get_value();
     }
-    os<< std::endl;
     return os;
 }
 
@@ -98,15 +103,9 @@ inline DnaSequence::DnaSequence(const DnaSequence &seq) {
         }
 }
 
-
-//DnaSequence::DnaSequence(const std::string _seq) {
-//    const char * seq=std::string::c_str(_seq);
-//    m_len = strlen(_seq);
-//    m_seq=new Nucleotide[m_len];
-//    for (size_t i = 0; i <m_len ; ++i) {
-//        m_seq[i].set_value(seq[i]);
-//    }
-//}
+inline DnaSequence::~DnaSequence() {
+    delete[] this->m_seq;
+}
 
 
 #endif //DNA_DNASEQUENCE_H

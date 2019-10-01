@@ -43,10 +43,10 @@ RM = /opt/clion-2019.2/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shira/Desktop/dna
+CMAKE_SOURCE_DIR = /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shira/Desktop/dna/cmake-build-debug
+CMAKE_BINARY_DIR = /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/dna.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/dna.dir/flags.make
 
 CMakeFiles/dna.dir/main.cpp.o: CMakeFiles/dna.dir/flags.make
 CMakeFiles/dna.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shira/Desktop/dna/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/dna.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dna.dir/main.cpp.o -c /home/shira/Desktop/dna/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/dna.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dna.dir/main.cpp.o -c /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/main.cpp
 
 CMakeFiles/dna.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dna.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shira/Desktop/dna/main.cpp > CMakeFiles/dna.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/main.cpp > CMakeFiles/dna.dir/main.cpp.i
 
 CMakeFiles/dna.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dna.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shira/Desktop/dna/main.cpp -o CMakeFiles/dna.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/main.cpp -o CMakeFiles/dna.dir/main.cpp.s
 
 CMakeFiles/dna.dir/DnaSequence.cpp.o: CMakeFiles/dna.dir/flags.make
 CMakeFiles/dna.dir/DnaSequence.cpp.o: ../DnaSequence.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shira/Desktop/dna/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/dna.dir/DnaSequence.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dna.dir/DnaSequence.cpp.o -c /home/shira/Desktop/dna/DnaSequence.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/dna.dir/DnaSequence.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dna.dir/DnaSequence.cpp.o -c /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.cpp
 
 CMakeFiles/dna.dir/DnaSequence.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dna.dir/DnaSequence.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shira/Desktop/dna/DnaSequence.cpp > CMakeFiles/dna.dir/DnaSequence.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.cpp > CMakeFiles/dna.dir/DnaSequence.cpp.i
 
 CMakeFiles/dna.dir/DnaSequence.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dna.dir/DnaSequence.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shira/Desktop/dna/DnaSequence.cpp -o CMakeFiles/dna.dir/DnaSequence.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.cpp -o CMakeFiles/dna.dir/DnaSequence.cpp.s
 
 # Object files for target dna
 dna_OBJECTS = \
@@ -95,7 +95,7 @@ dna: CMakeFiles/dna.dir/main.cpp.o
 dna: CMakeFiles/dna.dir/DnaSequence.cpp.o
 dna: CMakeFiles/dna.dir/build.make
 dna: CMakeFiles/dna.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shira/Desktop/dna/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable dna"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable dna"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dna.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/dna.dir/clean:
 .PHONY : CMakeFiles/dna.dir/clean
 
 CMakeFiles/dna.dir/depend:
-	cd /home/shira/Desktop/dna/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shira/Desktop/dna /home/shira/Desktop/dna /home/shira/Desktop/dna/cmake-build-debug /home/shira/Desktop/dna/cmake-build-debug /home/shira/Desktop/dna/cmake-build-debug/CMakeFiles/dna.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles/dna.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dna.dir/depend
 

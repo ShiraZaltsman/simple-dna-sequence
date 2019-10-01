@@ -1,3 +1,3 @@
-/home/shira/Desktop/dna/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/shira/Desktop/dna/cmake-build-debug/CMakeFiles/dna.dir
-/home/shira/Desktop/dna/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles/dna.dir
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles/edit_cache.dir
