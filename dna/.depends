@@ -1,2 +1,0 @@
-DnaSequence.o: DnaSequence.cpp DnaSequence.h Nucleotide.h
-main.o: main.cpp DnaSequence.h Nucleotide.h
