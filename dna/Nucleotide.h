@@ -11,7 +11,8 @@ public:
     Nucleotide();
     Nucleotide(char val);
     void set_value(char val);
-    char get_value();
+    char get_value()const;
+    Nucleotide &operator=(const Nucleotide &nuc);
 private:
     char value;
 };
@@ -35,8 +36,13 @@ inline void Nucleotide::set_value(char val) {
     }
 }
 
-inline char Nucleotide::get_value() {
+inline char Nucleotide::get_value() const {
     return value;
+}
+
+inline Nucleotide &Nucleotide::operator=(const Nucleotide &nuc) {
+    value=nuc.get_value();
+    return (*this);
 }
 
 #endif //DNA_NUCLEOTIDE_H

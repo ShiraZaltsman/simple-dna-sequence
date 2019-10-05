@@ -3,7 +3,7 @@
 //
 
 #include "DnaSequence.h"
-
+#include <fstream>
 size_t mystrlen(const char *str) {
     const char *p = str;
     while (*p++);
@@ -15,7 +15,7 @@ bool operator==(DnaSequence &seq1, DnaSequence &seq2) {
         return false;
     } else {
         for (size_t i = 0; i < seq1.get_seq_length(); ++i) {
-            if (seq1[i] != seq2[i])
+            if (seq1[i]!= seq2[i])
                 return false;
         }
         return true;
@@ -27,3 +27,54 @@ bool operator!=(DnaSequence &seq1, DnaSequence &seq2) {
 }
 
 
+
+char ComplementaryBase(char value) {
+    char baseComp;
+    switch (value) {
+        case 'A':
+            baseComp = 'T';
+            break;
+        case 'T':
+            baseComp = 'A';
+            break;
+        case 'C':
+            baseComp = 'G';
+            break;
+        case 'G':
+            baseComp = 'C';
+            break;
+    }
+    return baseComp;
+}
+
+DnaSequence readSequenceFile(std::string fileName){
+    std::string str;
+    std::ifstream file(fileName.c_str());
+    if (file.is_open()) {
+        std::string line;
+        while (getline(file, line)) {
+            str+=line;
+        }
+        file.close();
+    }
+    else {
+        throw "Unable to open file";
+    }
+    const char *s=str.c_str();
+    DnaSequence sequence(s);
+    return sequence;
+}
+
+void writeSequenceFile(const std::string& fileName, DnaSequence seq) {
+    std::string str;
+    std::ofstream file(fileName.c_str());
+    if (file.is_open()) {
+        for (size_t i = 0; i < seq.get_seq_length() ; ++i) {
+            file<<seq[i];
+        }
+        file.close();
+    }
+    else {
+        throw "Unable to open file";
+    }
+}

@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.cpp
-DnaSequence.h
-/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.h
-
 /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.h
 iostream
 -
