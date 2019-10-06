@@ -15,7 +15,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DnaSequence.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/DnaSequence.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DnaSequence.h" beforeDir="false" afterPath="$PROJECT_DIR$/DnaSequence.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Nucleotide.h" beforeDir="false" afterPath="$PROJECT_DIR$/Nucleotide.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dna.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dna.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dna.dir/DnaSequence.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dna.dir/DnaSequence.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dna.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/dna.dir/main.cpp.o" afterDir="false" />
@@ -100,7 +99,8 @@
       <workItem from="1569507192054" duration="10632000" />
       <workItem from="1569952141506" duration="1546000" />
       <workItem from="1569954673577" duration="26898000" />
-      <workItem from="1570306253011" duration="4806000" />
+      <workItem from="1570306253011" duration="7642000" />
+      <workItem from="1570377342241" duration="4091000" />
     </task>
     <servers />
   </component>
@@ -124,13 +124,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/DnaSequence.cpp</url>
-          <line>50</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/DnaSequence.h</url>
+          <line>206</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>72</line>
+          <url>file://$PROJECT_DIR$/DnaSequence.h</url>
+          <line>213</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>

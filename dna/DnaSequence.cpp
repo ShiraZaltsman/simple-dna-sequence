@@ -10,7 +10,7 @@ size_t mystrlen(const char *str) {
     return (p - str - 1);
 }
 
-bool operator==(DnaSequence &seq1, DnaSequence &seq2) {
+bool operator==(const DnaSequence &seq1, const DnaSequence &seq2) {
     if (seq1.get_seq_length() != seq2.get_seq_length()) {
         return false;
     } else {
@@ -22,7 +22,7 @@ bool operator==(DnaSequence &seq1, DnaSequence &seq2) {
     }
 }
 
-bool operator!=(DnaSequence &seq1, DnaSequence &seq2) {
+bool operator!=(const DnaSequence &seq1, const DnaSequence &seq2) {
     return !(seq1 == seq2);
 }
 

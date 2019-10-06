@@ -6,6 +6,7 @@
 #define DNA_DNASEQUENCE_H
 
 #include <iostream>
+#include <vector>
 #include "Nucleotide.h"
 
 
@@ -39,7 +40,7 @@ public:
 
     int* FindAll(const DnaSequence seq);
 
-    DnaSequence* get_all_consensus();
+    std::vector<DnaSequence> get_all_consensus();
 
     friend std::ostream &operator<<(std::ostream &os, const DnaSequence &dnaSequence);
 
@@ -52,8 +53,8 @@ private:
 };
 
 size_t mystrlen(const char *str);
-bool operator==(DnaSequence &seq1, DnaSequence &seq2);
-bool operator!=(DnaSequence &seq1, DnaSequence &seq2);
+bool operator==(const DnaSequence &seq1, const DnaSequence &seq2);
+bool operator!=(const DnaSequence &seq1, const DnaSequence &seq2);
 
 // phase_2:
 char ComplementaryBase(char value);
@@ -146,7 +147,7 @@ inline DnaSequence DnaSequence::get_sub_seq(size_t StartIndex, size_t EndIndex) 
         throw "invalid indexes";
     }
     DnaSequence subseq("");
-    for (size_t i = 0; i < EndIndex - StartIndex; ++i) {
+    for (size_t i = StartIndex; i < EndIndex; ++i) {
         subseq += m_seq[i].get_value();
     }
 
@@ -202,13 +203,20 @@ inline int *DnaSequence::FindAll(const DnaSequence seq) {
     return NULL;
 }
 
-inline DnaSequence *DnaSequence::get_all_consensus() {
-//    size_t i=0;
-//    int* s=this->FindAll("ATG");
-//    while (i<this->Count("ATG")){
-//
-//    }
-    return NULL;
+inline std::vector<DnaSequence> DnaSequence::get_all_consensus() {
+    std::vector<DnaSequence> consesuslist;
+    int *s=this->FindAll("ATG");
+    for (int j = 0; j < this->Count("ATG"); ++j) {
+        size_t start_index = s[j] + 3;
+        while (start_index + 3 <= m_len) {
+            DnaSequence nextcodon = this->get_sub_seq(start_index, start_index + 3);
+            if (nextcodon == "TAG" ||nextcodon == "TAA" || nextcodon == "TGA"){
+                consesuslist.push_back(get_sub_seq(s[j],start_index+3));
+            }
+            start_index=start_index+3;
+        }
+    }
+    return consesuslist;
 }
 
 #endif //DNA_DNASEQUENCE_H

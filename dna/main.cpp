@@ -42,14 +42,15 @@
 
 int main() {
     try {
-        DnaSequence seq1("AATTCCGGCCATCCATGCC");
-        DnaSequence seq2 = seq1;
+        DnaSequence seq1("AATTCCATGGGCCATTAGCCATGCC");
+        DnaSequence seq2 = "AAATTTCCCGGGTGCTA";
         DnaSequence seq6;
         seq6=seq2;
-        std::cout << seq1 << seq2;
-        std::cout << seq1[2];
-        DnaSequence seq3("ATATA");
+        std::cout<<"seq1: " << seq1<<std::endl;
+        std::cout<<"seq1[2]: " << seq1[2]<<std::endl;
 
+        DnaSequence seq3("ATATA");
+        std::cout<<"seq3: " << seq3<<std::endl;
         std::cout << "\nseq3==seq2: " << (seq3 == seq2) << std::endl;
         std::cout << "\nseq3!=seq2: " << (seq3 != seq2) << std::endl;
 
@@ -57,23 +58,29 @@ int main() {
 
         DnaSequence subseq=seq4.get_sub_seq(0,4);
 
-//        std::cout <<seq4<<std::endl;
-//        std::cout <<"subseq:"<<subseq<<std::endl;
-//        DnaSequence paird=seq1.get_complementary_seq();
-//        std::cout <<seq1<<" complemantry seq: "<<paird<<std::endl;
-////        DnaSequence fromFile=readSequenceFile("/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/gen123.txt");
-////        std::cout <<fromFile<<std::endl;
-////        writeSequenceFile("/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/outseq.txt",fromFile);
-//
-//        std::cout<<"find CC in seq1: "<<seq1.find("CC")<<std::endl;
-//        std::cout<<"find CCC in seq1: "<<seq1.find("CCC")<<std::endl;
+        std::cout <<seq4<<std::endl;
+        std::cout <<"subseq:"<<subseq<<std::endl;
+        DnaSequence paird=seq1.get_complementary_seq();
+        std::cout <<seq1<<" complemantry seq: "<<paird<<std::endl;
+//        DnaSequence fromFile=readSequenceFile("/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/gen123.txt");
+//        std::cout <<fromFile<<std::endl;
+//        writeSequenceFile("/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/outseq.txt",fromFile);
 
-        std::cout<<"count CC in seq1: "<<seq1.Count("CC")<<std::endl;
+        std::cout<<"find CC in seq1: "<<seq1.find("CC")<<std::endl;
+        std::cout<<"find CCC in seq1: "<<seq1.find("CCC")<<std::endl;
+
+        std::cout<<"count CC in seq1: "<<seq1.Count("CC")<<"in index: "<<std::endl;
         int* indexs=seq1.FindAll("CC");
         for (int i = 0; i < seq1.Count("CC"); ++i) {
-            std::cout<<indexs[i]<<std::endl;
+            std::cout<<indexs[i]<<"\n";
         }
         delete indexs;
+       std::vector<DnaSequence> con=seq1.get_all_consensus();
+        std::cout<<"consensus in seq1: "<<std::endl;
+       for(std::vector<DnaSequence>::iterator it = con.begin(); it != con.end(); ++it) {
+            std::cout << *it;
+        }
+
     }catch (const char * e){
         std::cout<<std::endl<<e<<std::endl;
     }

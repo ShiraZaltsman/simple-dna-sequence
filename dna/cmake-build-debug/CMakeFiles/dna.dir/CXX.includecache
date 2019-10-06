@@ -9,6 +9,8 @@
 /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.h
 iostream
 -
+vector
+-
 Nucleotide.h
 /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/Nucleotide.h
 
