@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaColllection.h
+DnaSequence.h
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.h
+
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.h
+iostream
+-
+vector
+-
+
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/control.h
+sstream
+-
+files_stream_dna.h
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/files_stream_dna.h
+string
+-
+DnaColllection.h
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaColllection.h
+
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/files_stream_dna.h
+DnaSequence.h
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.h
+fstream
+-
+
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/main.cpp
+iostream
+-
+control.h
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/control.h
+files_stream_dna.h
+/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/files_stream_dna.h
+

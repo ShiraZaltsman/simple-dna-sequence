@@ -150,6 +150,33 @@ DnaSequence.cpp.s:
 	$(MAKE) -f CMakeFiles/dna.dir/build.make CMakeFiles/dna.dir/DnaSequence.cpp.s
 .PHONY : DnaSequence.cpp.s
 
+files_stream_dna.o: files_stream_dna.cpp.o
+
+.PHONY : files_stream_dna.o
+
+# target to build an object file
+files_stream_dna.cpp.o:
+	$(MAKE) -f CMakeFiles/dna.dir/build.make CMakeFiles/dna.dir/files_stream_dna.cpp.o
+.PHONY : files_stream_dna.cpp.o
+
+files_stream_dna.i: files_stream_dna.cpp.i
+
+.PHONY : files_stream_dna.i
+
+# target to preprocess a source file
+files_stream_dna.cpp.i:
+	$(MAKE) -f CMakeFiles/dna.dir/build.make CMakeFiles/dna.dir/files_stream_dna.cpp.i
+.PHONY : files_stream_dna.cpp.i
+
+files_stream_dna.s: files_stream_dna.cpp.s
+
+.PHONY : files_stream_dna.s
+
+# target to generate assembly for a file
+files_stream_dna.cpp.s:
+	$(MAKE) -f CMakeFiles/dna.dir/build.make CMakeFiles/dna.dir/files_stream_dna.cpp.s
+.PHONY : files_stream_dna.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... DnaSequence.o"
 	@echo "... DnaSequence.i"
 	@echo "... DnaSequence.s"
+	@echo "... files_stream_dna.o"
+	@echo "... files_stream_dna.i"
+	@echo "... files_stream_dna.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

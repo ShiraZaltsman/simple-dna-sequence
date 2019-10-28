@@ -84,10 +84,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaColllection.h">
+			<Option target="dna"/>
+		</Unit>
 		<Unit filename="/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.cpp">
 			<Option target="dna"/>
 		</Unit>
 		<Unit filename="/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/DnaSequence.h">
+			<Option target="dna"/>
+		</Unit>
+		<Unit filename="/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/control.h">
+			<Option target="dna"/>
+		</Unit>
+		<Unit filename="/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/files_stream_dna.cpp">
+			<Option target="dna"/>
+		</Unit>
+		<Unit filename="/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/files_stream_dna.h">
 			<Option target="dna"/>
 		</Unit>
 		<Unit filename="/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/main.cpp">

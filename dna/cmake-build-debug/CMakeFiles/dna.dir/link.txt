@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/dna.dir/main.cpp.o CMakeFiles/dna.dir/DnaSequence.cpp.o  -o dna 

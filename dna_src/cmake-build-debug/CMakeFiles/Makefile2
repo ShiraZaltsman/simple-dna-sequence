@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cma
 CMakeFiles/dna.dir/all:
 	$(MAKE) -f CMakeFiles/dna.dir/build.make CMakeFiles/dna.dir/depend
 	$(MAKE) -f CMakeFiles/dna.dir/build.make CMakeFiles/dna.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target dna"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target dna"
 .PHONY : CMakeFiles/dna.dir/all
 
 # Include target in all.
@@ -81,7 +81,7 @@ all: CMakeFiles/dna.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dna.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/dna.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shira/Desktop/simple-dna-sequence-ShiraZaltsman/dna/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/dna.dir/rule

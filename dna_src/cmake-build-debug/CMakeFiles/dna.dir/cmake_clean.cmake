@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/dna.dir/main.cpp.o"
   "CMakeFiles/dna.dir/DnaSequence.cpp.o"
+  "CMakeFiles/dna.dir/files_stream_dna.cpp.o"
   "dna.pdb"
   "dna"
 )

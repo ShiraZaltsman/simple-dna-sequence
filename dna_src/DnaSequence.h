@@ -7,10 +7,20 @@
 
 #include <iostream>
 #include <vector>
-#include "Nucleotide.h"
-
 
 class DnaSequence {
+
+    class Nucleotide {
+    public:
+        Nucleotide();
+        Nucleotide(char val);
+        void set_value(char val);
+        char get_value()const;
+        Nucleotide &operator=(const Nucleotide &nuc);
+    private:
+        char value;
+    };
+
 public:
     DnaSequence(const char *seq);
 
@@ -28,17 +38,19 @@ public:
 
     const char operator[](size_t index) const;
 
+    char &operator[](size_t index);
+
     size_t get_seq_length() const;
 
     DnaSequence get_sub_seq(size_t startindex, size_t EndIndex);
 
     DnaSequence get_complementary_seq();
 
-    int find(const DnaSequence seq, size_t start=0);
+    int find(const DnaSequence seq, size_t start = 0);
 
-    int Count (const DnaSequence seq);
+    int Count(const DnaSequence seq);
 
-    int* FindAll(const DnaSequence seq);
+    int *FindAll(const DnaSequence seq);
 
     std::vector<DnaSequence> get_all_consensus();
 
@@ -52,14 +64,114 @@ private:
     size_t m_len;
 };
 
+static int countRecord=0;
+class DnaSequenceRecord {
+public:
+    DnaSequenceRecord(DnaSequence seq, std::string name);
+    void id_genarate(){
+        countRecord++;
+        m_ID=countRecord;
+    }
+
+    int getId() const;
+
+    const std::string &getName() const;
+
+    void setName(const std::string &mName);
+
+    const DnaSequence &getSeq() const;
+
+    void setSeq(const DnaSequence &mSeq);
+
+    void printRecord();
+
+private:
+    int m_ID;
+    std::string m_name;
+    DnaSequence m_seq;
+
+};
+
+inline int DnaSequenceRecord::getId() const {
+    return m_ID;
+}
+
+inline const std::string &DnaSequenceRecord::getName() const {
+    return m_name;
+}
+
+inline void DnaSequenceRecord::setName(const std::string &mName) {
+    m_name = mName;
+}
+
+inline const DnaSequence &DnaSequenceRecord::getSeq() const {
+    return m_seq;
+}
+
+inline void DnaSequenceRecord::setSeq(const DnaSequence &mSeq) {
+    m_seq = mSeq;
+}
+
+inline DnaSequenceRecord::DnaSequenceRecord(DnaSequence seq, std::string name) {
+    m_seq=seq;
+    m_name=name;
+    id_genarate();
+}
+
+inline void DnaSequenceRecord::printRecord() {
+    std::cout<<"["<<m_ID<<"]"<<" "<<m_name<<": ";
+    if(m_seq.get_seq_length()>40){
+        std::cout<<m_seq.get_sub_seq(0,32)
+        <<"..."<<m_seq.get_sub_seq(m_seq.get_seq_length()-3,m_seq.get_seq_length())<<std::endl;
+    }
+    else{
+        std::cout<<m_seq<<std::endl;
+    }
+}
+
+
+inline DnaSequence::Nucleotide::Nucleotide() {
+
+}
+
+inline DnaSequence::Nucleotide::Nucleotide(char val) {
+    if(val=='A' || val=='G' || val=='C'|| val=='T' ){
+        this->value=val;
+    } else{
+        throw "nucleotide value is not valid!";
+    }
+}
+
+inline void DnaSequence::Nucleotide::set_value(char val) {
+    if(val=='A' || val=='G' || val=='C'|| val=='T' ){
+        this->value=val;
+    } else{
+        throw "nucleotide value is not valid!";
+    }
+}
+
+inline char DnaSequence::Nucleotide::get_value() const {
+    return value;
+}
+
+inline DnaSequence::Nucleotide &DnaSequence::Nucleotide::operator=(const Nucleotide &nuc) {
+    value=nuc.get_value();
+    return (*this);
+}
+
+
 size_t mystrlen(const char *str);
+
 bool operator==(const DnaSequence &seq1, const DnaSequence &seq2);
+
 bool operator!=(const DnaSequence &seq1, const DnaSequence &seq2);
 
 // phase_2:
 char ComplementaryBase(char value);
+
 DnaSequence readSequenceFile(std::string fileName);
-void writeSequenceFile(const std::string& fileName,DnaSequence seq);
+
+void writeSequenceFile(const std::string &fileName, DnaSequence seq);
 
 inline DnaSequence::DnaSequence() {
     m_len = 0;
@@ -134,7 +246,7 @@ inline void DnaSequence::operator+=(const char nuc) {
 
 }
 
-inline Nucleotide *const DnaSequence::get_seq() const {
+inline DnaSequence::Nucleotide *const DnaSequence::get_seq() const {
     return m_seq;
 }
 
@@ -176,14 +288,13 @@ inline int DnaSequence::find(const DnaSequence seq, size_t start) {
 }
 
 inline int DnaSequence::Count(const DnaSequence seq) {
-    int count=0;
-    for (size_t i = 0; i < m_len; ) {
-        int ans=find(seq,i);
-        if (ans>0){
-            i=ans+seq.get_seq_length();
+    int count = 0;
+    for (size_t i = 0; i < m_len;) {
+        int ans = find(seq, i);
+        if (ans > 0) {
+            i = ans + seq.get_seq_length();
             count++;
-        }
-        else {
+        } else {
             break;
         }
     }
@@ -191,10 +302,10 @@ inline int DnaSequence::Count(const DnaSequence seq) {
 }
 
 inline int *DnaSequence::FindAll(const DnaSequence seq) {
-    int size=this->Count(seq);
-    if(size>0) {
+    int size = this->Count(seq);
+    if (size > 0) {
         int *indexs = new int[size];
-        indexs[0]=find(seq);
+        indexs[0] = find(seq);
         for (int i = 1; i < size; ++i) {
             indexs[i] = find(seq, indexs[i - 1] + seq.get_seq_length());
         }
@@ -205,18 +316,22 @@ inline int *DnaSequence::FindAll(const DnaSequence seq) {
 
 inline std::vector<DnaSequence> DnaSequence::get_all_consensus() {
     std::vector<DnaSequence> consesuslist;
-    int *s=this->FindAll("ATG");
+    int *s = this->FindAll("ATG");
     for (int j = 0; j < this->Count("ATG"); ++j) {
         size_t start_index = s[j] + 3;
         while (start_index + 3 <= m_len) {
             DnaSequence nextcodon = this->get_sub_seq(start_index, start_index + 3);
-            if (nextcodon == "TAG" ||nextcodon == "TAA" || nextcodon == "TGA"){
-                consesuslist.push_back(get_sub_seq(s[j],start_index+3));
+            if (nextcodon == "TAG" || nextcodon == "TAA" || nextcodon == "TGA") {
+                consesuslist.push_back(get_sub_seq(s[j], start_index + 3));
             }
-            start_index=start_index+3;
+            start_index = start_index + 3;
         }
     }
     return consesuslist;
 }
+
+//inline char &DnaSequence::operator[](size_t index) {
+//    return 'n';
+//}
 
 #endif //DNA_DNASEQUENCE_H
